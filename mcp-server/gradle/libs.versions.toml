@@ -1,0 +1,44 @@
+[versions]
+
+#plugins versions
+kotlin = "2.2.20"
+ktlint = "13.1.0"
+spring-dependency-management = "1.1.7"
+cyclonedx = "2.4.1"
+
+# spring versions
+spring-boot = "3.5.6"
+# spring-ai = "1.0.3"
+spring-ai = "1.1.0-M3"
+spring-ai-mcp-annotations = "0.1.0"
+spring-community-mcp-client-security = "0.0.3"
+
+#logging
+kotlin-logging = "7.0.13"
+
+[libraries]
+spring-ai-starter-mcp-server = { group = "org.springframework.ai", name = "spring-ai-starter-mcp-server-webmvc", version.ref = "spring-ai" }
+spring-ai-mcp-annotations = { group = "com.logaritex.mcp", name = "spring-ai-mcp-annotations", version.ref = "spring-ai-mcp-annotations" }
+
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
+
+spring-ai-starter-mcp-client = { group = "org.springframework.ai", name = "spring-ai-starter-mcp-client", version.ref = "spring-ai" }
+spring-ai-starter-model-azure-openai = { group = "org.springframework.ai", name = "spring-ai-starter-model-azure-openai", version.ref = "spring-ai" }
+spring-community-mcp-client-security = { group = "org.springaicommunity", name = "mcp-client-security", version.ref = "spring-community-mcp-client-security"}
+
+spring-boot-starter-security = { group = "org.springframework.boot", name = "spring-boot-starter-security" }
+spring-boot-starter-oauth2-client = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-client" }
+
+kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-plugin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependencyManagement = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+
+cyclonedx-bom = { id = "org.cyclonedx.bom", version.ref = "cyclonedx" }
