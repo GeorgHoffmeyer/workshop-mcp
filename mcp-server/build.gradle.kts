@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.spring.ai.starter.mcp.server)
 }
 
 tasks.test {
