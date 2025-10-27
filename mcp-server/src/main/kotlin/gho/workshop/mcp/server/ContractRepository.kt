@@ -2,12 +2,11 @@ package gho.workshop.mcp.server
 
 import org.springframework.stereotype.Component
 import java.time.ZonedDateTime
-import java.util.UUID
 
 @Component
 class ContractRepository {
-    private val contract =
-        mapOf<Int, Contract>(
+    private val contracts =
+        mutableMapOf<Int, Contract>(
             1 to
                 Contract(
                     1,
@@ -26,7 +25,27 @@ class ContractRepository {
                 ),
         )
 
-    fun getContractById(id: Int) = contract[id]
+    fun getContractById(id: Int) = contracts[id]
+
+    fun addContract(
+        contractStartDate: ZonedDateTime,
+        contractEndDate: ZonedDateTime,
+        noticePeriodInDays: Int,
+        contractor: String,
+    ): Contract {
+        val contract =
+            Contract(
+                contractId = contracts.keys.max() + 1,
+                contractStartDate = contractStartDate,
+                contractEndDate = contractEndDate,
+                noticePeriodInDays = noticePeriodInDays,
+                contractor = contractor,
+            )
+
+        contracts[contract.contractId] = contract
+
+        return contract
+    }
 }
 
 data class Contract(
@@ -34,5 +53,5 @@ data class Contract(
     val contractStartDate: ZonedDateTime,
     val contractEndDate: ZonedDateTime,
     val noticePeriodInDays: Int,
-    val contrator: String,
+    val contractor: String,
 )
