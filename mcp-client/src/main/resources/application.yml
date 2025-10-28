@@ -1,0 +1,27 @@
+spring:
+  ai:
+    azure:
+      openai:
+        api-key: a6cbb30b8bac4996a1845c7f26f114e6
+        endpoint: https://api.competence-cente-cc-genai-prod.enbw-az.cloud
+        chat:
+          options:
+            deployment-name: gpt-4.1
+    mcp:
+      client:
+        sse:
+          connections:
+            transactions-server:
+              url: http://localhost:8080
+              sse-endpoint: /sse
+        type: sync
+        name: mako-monitor-mcp-client
+        version: 1.0.0
+        enabled: true
+
+server:
+  port: 9080
+
+logging:
+  level:
+    root: info

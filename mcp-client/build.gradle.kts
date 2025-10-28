@@ -19,6 +19,11 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.spring.ai.starter.mcp.client)
+    implementation(libs.spring.ai.starter.model.azure.openai)
+    implementation(libs.spring.boot.starter.web)
+
+    implementation(libs.kotlin.logging)
 }
 
 tasks.test {
